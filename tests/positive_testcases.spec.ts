@@ -134,3 +134,48 @@ test('Pos_Fun_015:Convert simple imperative daily command', async ({ page }) => 
   await singlishInput.fill('malli issarahata poddak yanna');
   await expect(page.getByText('මල්ලි ඉස්සරහට පොඩ්ඩක් යන්න')).toBeVisible();
 });
+
+test('Pos_Fun_016: Convert polite imperative request', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('karuNaakaralaa eeka mata dhenna puluvandha');
+  await expect(page.getByText('කරුණාකරලා ඒක මට දෙන්න පුලුවන්ද')).toBeVisible();
+});
+
+test('Pos_Fun_017: Convert future tense sentence', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('api heta hike ekak yanavaa');
+  await expect(page.getByText('අපි හෙට hike එකක් යනවා')).toBeVisible();
+});
+
+test('Pos_Fun_018: Convert past tense daily activity sentence', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('mama ehe kalin gihin thiyenavaa');
+  await expect(page.getByText('මම එහෙ කලින් ගිහින් තියෙනවා')).toBeVisible();
+});
+
+test('Pos_Fun_019: Convert greeting with interrogative form', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('aayuboovan, oyaata kohomadha?');
+  await expect(page.getByText('ආයුබෝවන්, ඔයාට කොහොමද?')).toBeVisible();
+});
+
+test('Pos_Fun_020: Convert polite request sentence', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('mata podi udhavvak karanna puLuvandha');
+  await expect(page.getByText('මට පොඩි උදව්වක් කරන්න පුළුවන්ද')).toBeVisible();
+});
