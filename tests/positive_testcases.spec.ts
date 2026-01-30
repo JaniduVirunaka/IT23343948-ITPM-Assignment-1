@@ -179,3 +179,55 @@ test('Pos_Fun_020: Convert polite request sentence', async ({ page }) => {
   await singlishInput.fill('mata podi udhavvak karanna puLuvandha');
   await expect(page.getByText('මට පොඩි උදව්වක් කරන්න පුළුවන්ද')).toBeVisible();
 });
+
+test('Pos_Fun_021: Convert short present tense response', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('hari, mama dhaen karannam');
+  await expect(page.getByText('හරි, මම දැන් කරන්නම්')).toBeVisible();
+});
+
+test('Pos_Fun_022: Convert past tense sentence with location', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('mama iiyee havasa hospital ekata giyaa');
+  await expect(page.getByText('මම ඊයේ හවස hospital එකට ගියා')).toBeVisible();
+});
+
+test('Pos_Fun_023: Converting informal / slangs', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('ae bn mata ara video tika dhaapanko, thanks machan');
+  await expect(page.getByText('ඇ බ්න් මට අර video ටික දාපන්කො, thanks මචන්')).toBeVisible();
+});
+
+test('Pos_Fun_024: Converting numbers with interrogative form', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('dhaen time eka 7.30 AM, api office yanna oonee!');
+  await expect(page.getByText('දැන් time එක 7.30 AM, අපි office යන්න ඕනේ!')).toBeVisible();
+});
+
+test('Pos_Fun_025: Converting paragraph', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill(`adha suba udhaesanayak vunee naehae mokadha vaessa hariyata vahinavaa. 
+traffic thibbath mama office enna hadhanavaa. 
+adha Zoom meeting dhekak thiyenavaa saha documents tika kalin email karanna kiyalaa manager kiyuvvaa, 
+mata aegata amaruii namuth vaeda hariyata karanna try karanavaa.`);
+  await expect(page.getByText(`අද සුබ උදැසනයක් වුනේ නැහැ මොකද වැස්ස හරියට වහිනවා. 
+traffic තිබ්බත් මම office එන්න හදනවා. 
+අද Zoom meeting දෙකක් තියෙනවා සහ documents ටික කලින් email කරන්න කියලා manager කියුව්වා, 
+මට ඇගට අමරුඊ නමුත් වැඩ හරියට කරන්න try කරනවා.`)).toBeVisible();
+});
+
