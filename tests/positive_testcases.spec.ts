@@ -89,3 +89,48 @@ test('Pos_Fun_010: Convert negative sentence with mixed English', async ({ page 
   await singlishInput.fill('hodhatama vaessa unath api trip eka cancel kalea naehae');
   await expect(page.getByText('හොදටම වැස්ස උනත් අපි trip එක cancel කලේ නැහැ')).toBeVisible();
 });
+
+test('Pos_Fun_011: Convert interrogative daily usage sentence', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('oyaata adha havasata vaedak thiyenavaadha?');
+  await expect(page.getByText('ඔයාට අද හවසට වැඩක් තියෙනවාද?')).toBeVisible();
+});
+
+test('Pos_Fun_012: Convert past tense sentence with meeting context', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('oya kiyatadha meeting eka patan gaththea');
+  await expect(page.getByText('ඔය කියටද meeting එක පටන් ගත්තේ')).toBeVisible();
+});
+
+test('Pos_Fun_013: Convert interrogative sentence for system behavior', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('meeka hariyata vaeda karanavaadha?');
+  await expect(page.getByText('මේක හරියට වැඩ කරනවාද?')).toBeVisible();
+});
+
+test('Pos_Fun_014: Convert imperative command with English word', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('vahaama eyaata call ekak ganna !');
+  await expect(page.getByText('වහාම එයාට call එකක් ගන්න !')).toBeVisible();
+});
+
+test('Pos_Fun_015:Convert simple imperative daily command', async ({ page }) => {
+  await page.goto('https://www.swifttranslator.com');
+  const singlishInput = page.getByRole('textbox', {
+    name: 'Input Your Singlish Text Here.'
+  });
+  await singlishInput.fill('malli issarahata poddak yanna');
+  await expect(page.getByText('මල්ලි ඉස්සරහට පොඩ්ඩක් යන්න')).toBeVisible();
+});
