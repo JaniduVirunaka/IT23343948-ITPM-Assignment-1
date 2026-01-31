@@ -1,6 +1,4 @@
-
-## Repository Link
-https://github.com/JaniduVirunaka/IT23343948-ITPM-Assignment-1.git
+## ITMP Assignment 1 - Playwright UI Testing Project
 
 ## Setup environment
 #Install Dependencies
