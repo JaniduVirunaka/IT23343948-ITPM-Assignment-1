@@ -1,3 +1,4 @@
+
 ## Repository Link
 https://github.com/JaniduVirunaka/IT23343948-ITPM-Assignment-1.git
 
@@ -12,9 +13,12 @@ npx playwright install chromium
 ```
 
 ## Running Tests
-#Run all tests
+#Run all tests - properly tested only for this command
+
+#Running this command initially will result in more failed tests, 
+but once its being run for about 3 times the correct results can be achieved
 ```bash
-npm test
+npx playwright test --project=chromium
 ```
 
 #Run Tests in Headed Mode (visible browser)
@@ -31,3 +35,4 @@ npm run test:ui
 ```bash
 npm run report
 ```
+
